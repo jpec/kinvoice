@@ -1,0 +1,432 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>Client</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Client</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>352</width>
+            <height>464</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Client</string>
+    </property>
+    <property name="icon">
+        <pixmap>korganizer.png</pixmap>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>Layout1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>410</y>
+                <width>320</width>
+                <height>33</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <spacer>
+                <property name="name">
+                    <cstring>Horizontal Spacing2</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonOk</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;OK</string>
+                </property>
+                <property name="accel">
+                    <string></string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+                <property name="default">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonCancel</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Cancel</string>
+                </property>
+                <property name="accel">
+                    <string></string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5_5_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>310</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Commentaire</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5_5_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>280</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Site Web</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5_5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>250</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Email</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5_4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>220</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Mobile</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>190</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>FAX</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>160</y>
+                <width>100</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Tél</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>100</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Ville</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>130</y>
+                <width>100</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Pays</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>70</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Code Postal</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>40</y>
+                <width>100</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Adresse</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>10</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Nom</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>nom</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>10</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>adresse</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>40</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>cp</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>70</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>ville</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>100</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>pays</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>130</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>tel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>160</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>fax</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>190</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>mobile</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>220</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>email</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>250</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>site</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>280</y>
+                <width>200</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>commentaire</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>310</y>
+                <width>200</width>
+                <height>90</height>
+            </rect>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>Client</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>Client</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

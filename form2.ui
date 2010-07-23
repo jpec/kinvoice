@@ -1,0 +1,2108 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>Form2</class>
+<author>Yifeng HE</author>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>MainForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>608</width>
+            <height>612</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>232</width>
+            <height>343</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Kinvoice</string>
+    </property>
+    <hbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget">
+            <property name="name">
+                <cstring>tab_6</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Utilisateur</string>
+                </attribute>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox12</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>340</x>
+                            <y>10</y>
+                            <width>320</width>
+                            <height>210</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Les coordonnées de l'utilisateur</string>
+                    </property>
+                    <widget class="QTextEdit">
+                        <property name="name">
+                            <cstring>userNom</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>300</width>
+                                <height>180</height>
+                            </rect>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox13</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>10</y>
+                            <width>320</width>
+                            <height>210</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Logo de l'utilisateur</string>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>userLogo</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>300</width>
+                                <height>150</height>
+                            </rect>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>logo.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>false</bool>
+                        </property>
+                        <property name="alignment">
+                            <set>AlignCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>userLogoChange</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>100</x>
+                                <y>170</y>
+                                <width>120</width>
+                                <height>26</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Changer de logo</string>
+                        </property>
+                    </widget>
+                </widget>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Articles</string>
+                </attribute>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBox3</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>32767</width>
+                                <height>32767</height>
+                            </size>
+                        </property>
+                        <property name="title">
+                            <string>Catégories des articles</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QTable">
+                                <column>
+                                    <property name="text">
+                                        <string>Catégorie</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Description</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Articles</string>
+                                    </property>
+                                </column>
+                                <property name="name">
+                                    <cstring>tCat</cstring>
+                                </property>
+                                <property name="font">
+                                    <font>
+                                    </font>
+                                </property>
+                                <property name="focusPolicy">
+                                    <enum>NoFocus</enum>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>NoFrame</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Sunken</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>1</number>
+                                </property>
+                                <property name="vScrollBarMode">
+                                    <enum>Auto</enum>
+                                </property>
+                                <property name="numRows">
+                                    <number>0</number>
+                                </property>
+                                <property name="numCols">
+                                    <number>3</number>
+                                </property>
+                                <property name="showGrid">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="readOnly">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="selectionMode">
+                                    <enum>SingleRow</enum>
+                                </property>
+                                <property name="focusStyle">
+                                    <enum>SpreadSheet</enum>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout19</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>bAddCat</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Nouveau</string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap></pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>bDelCat_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Editer</string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap></pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>bDelCat</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Supprimer</string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap></pixmap>
+                                        </property>
+                                    </widget>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer17</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Vertical</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>20</width>
+                                                <height>40</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBoxArticle</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Articles</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QTable">
+                                <column>
+                                    <property name="text">
+                                        <string>Référence</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Description</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Prix UHT</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>En Stock</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Vendu</string>
+                                    </property>
+                                </column>
+                                <property name="name">
+                                    <cstring>tArt</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="font">
+                                    <font>
+                                    </font>
+                                </property>
+                                <property name="focusPolicy">
+                                    <enum>NoFocus</enum>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>NoFrame</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Sunken</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>1</number>
+                                </property>
+                                <property name="vScrollBarMode">
+                                    <enum>Auto</enum>
+                                </property>
+                                <property name="numRows">
+                                    <number>0</number>
+                                </property>
+                                <property name="numCols">
+                                    <number>5</number>
+                                </property>
+                                <property name="showGrid">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="readOnly">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="selectionMode">
+                                    <enum>SingleRow</enum>
+                                </property>
+                                <property name="focusStyle">
+                                    <enum>SpreadSheet</enum>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout18</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>bAddArt</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Nouveau</string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap></pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>bDelArt_2</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Editer</string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap></pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>bDelArt</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>Supprimer</string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap></pixmap>
+                                        </property>
+                                    </widget>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer16</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Vertical</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>20</width>
+                                                <height>40</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Clients</string>
+                </attribute>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QTable">
+                        <column>
+                            <property name="text">
+                                <string>Nom</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Adresse</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Code Postal</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Ville</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Pays</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Téléphone</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Fax</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Mobile</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Email</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Site Web</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Commentaire</string>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>tClient</cstring>
+                        </property>
+                        <property name="focusPolicy">
+                            <enum>NoFocus</enum>
+                        </property>
+                        <property name="numRows">
+                            <number>0</number>
+                        </property>
+                        <property name="numCols">
+                            <number>11</number>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>SingleRow</enum>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout27</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QToolButton">
+                                <property name="name">
+                                    <cstring>addClient_2</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="pixmap">
+                                    <pixmap>reload_page.png</pixmap>
+                                </property>
+                            </widget>
+                            <widget class="QToolButton">
+                                <property name="name">
+                                    <cstring>addClient</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="pixmap">
+                                    <pixmap>filenew_1.png</pixmap>
+                                </property>
+                            </widget>
+                            <widget class="QToolButton">
+                                <property name="name">
+                                    <cstring>editClient</cstring>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="pixmap">
+                                    <pixmap>edit.png</pixmap>
+                                </property>
+                            </widget>
+                            <widget class="QToolButton">
+                                <property name="name">
+                                    <cstring>delClient</cstring>
+                                </property>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                                <property name="pixmap">
+                                    <pixmap>button_cancel.png</pixmap>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer12_2</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Vertical</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>20</width>
+                                        <height>450</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </vbox>
+                    </widget>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBox7</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>200</width>
+                                <height>32767</height>
+                            </size>
+                        </property>
+                        <property name="title">
+                            <string>Rechercher</string>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout9</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>clientSearchStr</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>searchClient</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap>viewmag.png</pixmap>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QListBox">
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Nom"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Adresse"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Code Postal"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Ville"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Pays"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Téléphone"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Fax"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Mobile"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Email"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Site Web"</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>dans "Commentaire"</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>clientSearchFields</cstring>
+                                </property>
+                                <property name="selectionMode">
+                                    <enum>Single</enum>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </hbox>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Facture</string>
+                </attribute>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox16</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>540</x>
+                            <y>0</y>
+                            <width>410</width>
+                            <height>220</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Client</string>
+                    </property>
+                    <widget class="QTextEdit">
+                        <property name="name">
+                            <cstring>clientEdit</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>170</x>
+                                <y>20</y>
+                                <width>230</width>
+                                <height>190</height>
+                            </rect>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>clientSearch</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>59</x>
+                                <y>21</y>
+                                <width>100</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>pixmapLabel1_2_3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>33</width>
+                                <height>32</height>
+                            </rect>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>kuser.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QListBox">
+                        <property name="name">
+                            <cstring>clientResult</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>11</x>
+                                <y>59</y>
+                                <width>150</width>
+                                <height>150</height>
+                            </rect>
+                        </property>
+                        <property name="vScrollBarMode">
+                            <enum>Auto</enum>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox14</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>720</x>
+                            <y>220</y>
+                            <width>230</width>
+                            <height>70</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Date de la Facture</string>
+                    </property>
+                    <widget class="QDateEdit">
+                        <property name="name">
+                            <cstring>factureDate</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>80</x>
+                                <y>25</y>
+                                <width>110</width>
+                                <height>30</height>
+                            </rect>
+                        </property>
+                        <property name="order">
+                            <enum>DMY</enum>
+                        </property>
+                        <property name="date">
+                            <date>
+                                <year>2000</year>
+                                <month>1</month>
+                                <day>1</day>
+                            </date>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>pixmapLabel1_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>16</y>
+                                <width>48</width>
+                                <height>48</height>
+                            </rect>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>myevo-appointments.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox15</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>720</x>
+                            <y>300</y>
+                            <width>230</width>
+                            <height>70</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Référence de la Facture</string>
+                    </property>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>factureRef</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>60</x>
+                                <y>40</y>
+                                <width>110</width>
+                                <height>18</height>
+                            </rect>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>pixmapLabel1_2_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>48</width>
+                                <height>48</height>
+                            </rect>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>evolution-contacts.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>autoFactureRef</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>180</x>
+                                <y>20</y>
+                                <width>40</width>
+                                <height>40</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>run.png</pixmap>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox9</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>720</x>
+                            <y>500</y>
+                            <width>230</width>
+                            <height>110</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Résultats</string>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_4_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>50</y>
+                                <width>30</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>TVA</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>sumTTC</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>80</y>
+                                <width>80</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>10</pointsize>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>TOTAL TTC</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_4_2_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>100</x>
+                                <y>50</y>
+                                <width>16</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>%</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>tvaRate</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>40</x>
+                                <y>50</y>
+                                <width>50</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_4</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>80</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>TOTAL H.T.</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>sumHT</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>120</x>
+                                <y>20</y>
+                                <width>100</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>sumTVA</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>120</x>
+                                <y>50</y>
+                                <width>100</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>factureTTC</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>120</x>
+                                <y>80</y>
+                                <width>100</width>
+                                <height>22</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>11</pointsize>
+                                <bold>1</bold>
+                            </font>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QButtonGroup">
+                    <property name="name">
+                        <cstring>buttonGroup1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>720</x>
+                            <y>380</y>
+                            <width>230</width>
+                            <height>110</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Paiement</string>
+                    </property>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>paiement_1</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>90</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Espèce</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>paiement_3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>120</x>
+                                <y>20</y>
+                                <width>90</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Carte Bleu</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1_4_3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>60</y>
+                                <width>88</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Commentaire</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>paiement_4</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>120</x>
+                                <y>40</y>
+                                <width>90</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Autre</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>factureComment</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>80</y>
+                                <width>200</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>paiement_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>40</y>
+                                <width>90</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Chèque</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox11</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>0</y>
+                            <width>520</width>
+                            <height>220</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Articles</string>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_4_2_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>170</y>
+                                <width>100</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Prix Unitaire HT</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>puht</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>20</x>
+                                <y>190</y>
+                                <width>90</width>
+                                <height>18</height>
+                            </rect>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>quantite</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>140</x>
+                                <y>190</y>
+                                <width>90</width>
+                                <height>18</height>
+                            </rect>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_4_2_3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>140</x>
+                                <y>170</y>
+                                <width>83</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Quantité</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_4</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>7</x>
+                                <y>16</y>
+                                <width>183</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Catégories</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_4_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>256</x>
+                                <y>16</y>
+                                <width>182</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Articles</string>
+                        </property>
+                    </widget>
+                    <widget class="QListBox">
+                        <property name="name">
+                            <cstring>listArt</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>256</x>
+                                <y>31</y>
+                                <width>250</width>
+                                <height>130</height>
+                            </rect>
+                        </property>
+                        <property name="vScrollBarMode">
+                            <enum>Auto</enum>
+                        </property>
+                    </widget>
+                    <widget class="QListBox">
+                        <property name="name">
+                            <cstring>listCat</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>7</x>
+                                <y>31</y>
+                                <width>240</width>
+                                <height>130</height>
+                            </rect>
+                        </property>
+                        <property name="vScrollBarMode">
+                            <enum>Auto</enum>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>bAjouter</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>260</x>
+                                <y>170</y>
+                                <width>130</width>
+                                <height>40</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>button_ok.png</pixmap>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox10</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>220</y>
+                            <width>700</width>
+                            <height>390</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Achats</string>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel2_4_2_3_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>330</y>
+                                <width>180</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Intitulé (FACTURE, AVOIR...)</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>intitule</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>350</y>
+                                <width>150</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>FACTURE</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>facturePrint</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>440</x>
+                                <y>330</y>
+                                <width>50</width>
+                                <height>50</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>fileprint.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QTable">
+                        <column>
+                            <property name="text">
+                                <string>Référence</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Description</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Quantité</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Prix Unitaire HT</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Prix HT</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Remise</string>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>tAchat</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>630</width>
+                                <height>300</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                            <number>1</number>
+                        </property>
+                        <property name="vScrollBarMode">
+                            <enum>Auto</enum>
+                        </property>
+                        <property name="numRows">
+                            <number>0</number>
+                        </property>
+                        <property name="numCols">
+                            <number>6</number>
+                        </property>
+                        <property name="showGrid">
+                            <bool>true</bool>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>SingleRow</enum>
+                        </property>
+                        <property name="focusStyle">
+                            <enum>SpreadSheet</enum>
+                        </property>
+                    </widget>
+                    <widget class="QToolButton">
+                        <property name="name">
+                            <cstring>bAddAchat</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>650</x>
+                                <y>20</y>
+                                <width>40</width>
+                                <height>40</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>filenew_1.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>factureSave</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>500</x>
+                                <y>330</y>
+                                <width>50</width>
+                                <height>50</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>filesave_1.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QToolButton">
+                        <property name="name">
+                            <cstring>bDelAchat</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>650</x>
+                                <y>60</y>
+                                <width>40</width>
+                                <height>40</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>button_cancel.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>factureNew</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>380</x>
+                                <y>330</y>
+                                <width>50</width>
+                                <height>50</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>editdelete.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>factureNew_2</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>320</x>
+                                <y>330</y>
+                                <width>50</width>
+                                <height>50</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>filenew_1.png</pixmap>
+                        </property>
+                    </widget>
+                </widget>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Archives</string>
+                </attribute>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBox8</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Liste des factures enregistrées</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QTable">
+                                <column>
+                                    <property name="text">
+                                        <string>Référence</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Date</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Client</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Montant TTC</string>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Paiement</string>
+                                    </property>
+                                </column>
+                                <property name="name">
+                                    <cstring>tFact</cstring>
+                                </property>
+                                <property name="numRows">
+                                    <number>0</number>
+                                </property>
+                                <property name="numCols">
+                                    <number>5</number>
+                                </property>
+                                <property name="selectionMode">
+                                    <enum>SingleRow</enum>
+                                </property>
+                                <property name="focusStyle">
+                                    <enum>SpreadSheet</enum>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </hbox>
+            </widget>
+        </widget>
+    </hbox>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>menubar</cstring>
+    </property>
+    <item text="&amp;Fichier" name="fileMenu">
+        <action name="fileNewAction"/>
+        <action name="fileOpenAction"/>
+        <action name="fileSaveAction"/>
+        <action name="fileSaveAsAction"/>
+        <separator/>
+        <action name="fileExitAction"/>
+    </item>
+    <item text="&amp;Aide" name="helpMenu">
+        <action name="helpAboutAction"/>
+    </item>
+</menubar>
+<toolbars>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileNewAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Nouveau</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Nouveau</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOpenAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Ouvrir</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Ouvrir...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Enregistrer</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Enregistrer</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Enregistrer Sous</string>
+        </property>
+        <property name="menuText">
+            <string>Enregistrer &amp;Sous...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Quitter</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Quitter</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpAboutAction</cstring>
+        </property>
+        <property name="text">
+            <string>À Propos</string>
+        </property>
+        <property name="menuText">
+            <string>À &amp;Propos</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+</actions>
+<connections>
+    <connection>
+        <sender>fileNewAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileNew()</slot>
+    </connection>
+    <connection>
+        <sender>fileOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileOpen()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileSave()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileExit()</slot>
+    </connection>
+    <connection>
+        <sender>helpAboutAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>helpAbout()</slot>
+    </connection>
+    <connection>
+        <sender>bAddAchat</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>addAchat()</slot>
+    </connection>
+    <connection>
+        <sender>bDelAchat</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>delAchat()</slot>
+    </connection>
+    <connection>
+        <sender>clientSearch</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>findClient(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>clientResult</sender>
+        <signal>selected(int)</signal>
+        <receiver>MainForm</receiver>
+        <slot>clientSelected(int)</slot>
+    </connection>
+    <connection>
+        <sender>listCat</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>MainForm</receiver>
+        <slot>listCat_highlighted(int)</slot>
+    </connection>
+    <connection>
+        <sender>listArt</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>MainForm</receiver>
+        <slot>listArt_highlighted(int)</slot>
+    </connection>
+    <connection>
+        <sender>tAchat</sender>
+        <signal>valueChanged(int,int)</signal>
+        <receiver>MainForm</receiver>
+        <slot>tAchat_valueChanged(int,int)</slot>
+    </connection>
+    <connection>
+        <sender>facturePrint</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>facturePrint_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>searchClient</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>searchClient_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>clientSearchStr</sender>
+        <signal>returnPressed()</signal>
+        <receiver>MainForm</receiver>
+        <slot>searchClient_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tab_6</sender>
+        <signal>currentChanged(QWidget*)</signal>
+        <receiver>MainForm</receiver>
+        <slot>tab_currentChanged(QWidget*)</slot>
+    </connection>
+    <connection>
+        <sender>bAjouter</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>bAjouter_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>userLogoChange</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>userLogoChange_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>autoFactureRef</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>autoFactureRef_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tvaRate</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>tvaRate_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>factureNew</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>factureNew_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>quantite</sender>
+        <signal>returnPressed()</signal>
+        <receiver>MainForm</receiver>
+        <slot>bAjouter_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tFact</sender>
+        <signal>doubleClicked(int,int,int,const QPoint&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>tFact_doubleClicked(int,int,int,const QPoint&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>factureSave</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>factureSave_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAsAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileSaveAs()</slot>
+    </connection>
+    <connection>
+        <sender>bAddCat</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tCat_new_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bDelCat_2</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tCat_edit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bDelCat</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tCat_del_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tCat</sender>
+        <signal>selectionChanged()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tCat_selectionChanged()</slot>
+    </connection>
+    <connection>
+        <sender>bAddArt</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tArt_new_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bDelArt_2</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tArt_edit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bDelArt</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>tArt_del_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>addClient</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>addCl()</slot>
+    </connection>
+    <connection>
+        <sender>delClient</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>delCl()</slot>
+    </connection>
+    <connection>
+        <sender>addClient_2</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>reloadClient_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>editClient</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editClient_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tClient</sender>
+        <signal>doubleClicked(int,int,int,const QPoint&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>editClient_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tCat</sender>
+        <signal>doubleClicked(int,int,int,const QPoint&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>tCat_edit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tArt</sender>
+        <signal>doubleClicked(int,int,int,const QPoint&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>tArt_edit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>factureNew_2</sender>
+        <signal>clicked()</signal>
+        <receiver>MainForm</receiver>
+        <slot>factureNew_2_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="global" impldecl="in declaration">qmessagebox.h</include>
+    <include location="global" impldecl="in declaration">qstring.h</include>
+    <include location="local" impldecl="in declaration">data.h</include>
+    <include location="global" impldecl="in declaration">qstringlist.h</include>
+    <include location="global" impldecl="in declaration">qvalidator.h</include>
+    <include location="local" impldecl="in declaration">tableintitem.h</include>
+    <include location="global" impldecl="in declaration">qprinter.h</include>
+    <include location="global" impldecl="in declaration">qpainter.h</include>
+    <include location="global" impldecl="in declaration">qtoolbutton.h</include>
+    <include location="global" impldecl="in declaration">qwidget.h</include>
+    <include location="global" impldecl="in declaration">qptrlist.h</include>
+    <include location="global" impldecl="in declaration">qptrvector.h</include>
+    <include location="global" impldecl="in declaration">qvalidator.h</include>
+    <include location="global" impldecl="in declaration">qfiledialog.h</include>
+    <include location="global" impldecl="in declaration">qpixmap.h</include>
+    <include location="global" impldecl="in declaration">qdatetime.h</include>
+    <include location="global" impldecl="in declaration">qdir.h</include>
+    <include location="global" impldecl="in declaration">qapplication.h</include>
+    <include location="global" impldecl="in declaration">qcombobox.h</include>
+    <include location="local" impldecl="in implementation">form2.ui.h</include>
+</includes>
+<slots>
+    <slot>closeEvent( QCloseEvent * e )</slot>
+    <slot>fileNew()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>fileExit()</slot>
+    <slot>helpAbout()</slot>
+    <slot>tCat_new_clicked()</slot>
+    <slot>tCat_edit_clicked()</slot>
+    <slot>tCat_del_clicked()</slot>
+    <slot>tCat_selectionChanged()</slot>
+    <slot>tArt_new_clicked()</slot>
+    <slot>displayArticles( int cat )</slot>
+    <slot>tArt_edit_clicked()</slot>
+    <slot>tArt_del_clicked()</slot>
+    <slot>displayCats()</slot>
+    <slot>addCl()</slot>
+    <slot>delCl()</slot>
+    <slot>editClient_clicked()</slot>
+    <slot>searchClient_clicked()</slot>
+    <slot>reloadClient_clicked()</slot>
+    <slot>displayClient( QPtrList&lt;hClient&gt; &amp; list )</slot>
+    <slot>listCat_highlighted( int index )</slot>
+    <slot>listArt_highlighted( int index )</slot>
+    <slot>findClient( const QString &amp; search )</slot>
+    <slot>clientSelected( int index )</slot>
+    <slot>addAchat()</slot>
+    <slot>delAchat()</slot>
+    <slot>tAchat_valueChanged( int x, int y )</slot>
+    <slot>facturePrint_clicked()</slot>
+    <slot>tab_currentChanged( QWidget * )</slot>
+    <slot>bAjouter_clicked()</slot>
+    <slot>userLogoChange_clicked()</slot>
+    <slot>tvaRate_textChanged( const QString &amp; )</slot>
+    <slot>autoFactureRef_clicked()</slot>
+    <slot>factureNew_clicked()</slot>
+    <slot>tFact_doubleClicked( int x, int, int, const QPoint &amp; )</slot>
+    <slot>factureSave_clicked()</slot>
+    <slot>doPrint( QPrinter &amp; printer, hFacture &amp; facture )</slot>
+    <slot>factureNew_2_clicked()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function returnType="bool">saveAll()</function>
+    <function returnType="bool">loadFromFile( QString &amp; s )</function>
+    <function>doSum()</function>
+    <function returnType="bool">correctFactureRef( QString &amp; ref )</function>
+    <function returnType="hFacture *">getCurrentFacture()</function>
+    <function>facturesDisplay()</function>
+    <function returnType="bool">factureExists( QString &amp; ref )</function>
+    <function>countVendu( hFacture &amp; fact )</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="2" margin="2"/>
+</UI>
