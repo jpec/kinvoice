@@ -24,14 +24,14 @@ void Form2::init()
 {
     factureDate->setDate( QDate::currentDate() );
     clientSearchFields->setSelected(0, TRUE);
-
+    
     QFileInfo file_info( dataFile );
     if ( file_info.size() > 0)
 	if (!loadFromFile( dataFile )) {
-	    dataFile = dataFileDefault;
-	    loadFromFile( dataFile );
-	}
-	    
+	dataFile = dataFileDefault;
+	loadFromFile( dataFile );
+    }
+    
     
     displayClients = &Clients;
     
@@ -43,7 +43,7 @@ void Form2::init()
     
     // tab Facture
     autoFactureRef_clicked();
-    tvaRate->setText("19.60");
+    tvaRate->setText("0.00");
     
     // tab Archives
     facturesDisplay();
@@ -151,7 +151,7 @@ bool Form2::loadFromFile( QString & s)
 		hCat* cat = new hCat();
 		Cats.append(cat);
 		stream >> Cats.at(i)->name >> Cats.at(i)->desc >> m;
-
+		
 		for (j = 0; j < m; ++j) {
 		    hArt* art = new hArt();
 		    Cats.at(i)->articles.append(art );
@@ -193,7 +193,7 @@ bool Form2::loadFromFile( QString & s)
 			>> Factures.at(i)->sumTTC
 			
 			>> m;
-
+		
 		for (j = 0; j < m; ++j) {
 		    hAchat* achat = new hAchat();
 		    Factures.at(i)->achats.append(achat );
@@ -219,7 +219,7 @@ void Form2::closeEvent(QCloseEvent* e)
 {
     QString msg = QString(tr("Vous désirez sauvegarder vos données avant de quitter"));
     switch (QMessageBox::warning(this, "Kinvoice", msg, 
-		QMessageBox::Yes, QMessageBox::Cancel,QMessageBox::No)) {
+				 QMessageBox::Yes, QMessageBox::Cancel,QMessageBox::No)) {
     case QMessageBox::Yes:
 	if (saveAll())
 	    e->accept();
@@ -250,6 +250,7 @@ void Form2::closeEvent(QCloseEvent* e)
 
 void Form2::fileNew()
 {
+    /*
     dataFile = "";
     
     userLogo->setPixmap( QPixmap::fromMimeSource( "logo.png" ) );
@@ -263,13 +264,13 @@ void Form2::fileNew()
     
     Factures.clear();
     while (tFact->numRows() > 0) tFact->removeRow(0);
-    
+    */
 }
 
 void Form2::fileOpen()
 {
     QString file = QFileDialog::getOpenFileName(".", "Kinvoice (*.kiv)", this);
-        
+    
     QFileInfo file_info( file );
     if (file_info.extension( FALSE ) != "kiv")
 	file += ".kiv";
@@ -303,10 +304,10 @@ void Form2::fileSaveAs()
 {
     QString s = QFileDialog::getSaveFileName(
 	    QDir::home().path(),
-                    "Kinvoice (*.kiv)",
-                    this,
-                    "dialogue enregistrement"
-                    "Donnez un nom de fichier" );
+	    "Kinvoice (*.kiv)",
+	    this,
+	    "dialogue enregistrement"
+	    "Donnez un nom de fichier" );
     if (! s.isEmpty()) {
 	QFileInfo file_info( s );
 	if (file_info.extension( FALSE ) != "kiv")
@@ -318,9 +319,9 @@ void Form2::fileSaveAs()
 
 void Form2::fileExit()
 {
-    QString msg = QString(tr("Vous dérisez sauvegarder vos données avant de quitter"));
+    QString msg = QString(tr("Vous désirez sauvegarder vos données avant de quitter"));
     switch (QMessageBox::warning(this, "Kinvoice", msg, 
-		QMessageBox::Yes, QMessageBox::Cancel, QMessageBox::No)) {
+				 QMessageBox::Yes, QMessageBox::Cancel, QMessageBox::No)) {
     case QMessageBox::Yes:
 	if (saveAll())
 	    qApp->quit();
@@ -329,19 +330,21 @@ void Form2::fileExit()
 	qApp->quit();
 	break; 
     }
-
+    
 }
 
 void Form2::helpAbout()
 {
     QMessageBox::about(this, "Kinvoice - Licence GPL", tr("Hexysoft\n"
-"\n"
-"8 Avenue de Choisy\n"
-"75013 PARIS\n"
-"Tél: 01 45 82 42 20\n"
-"Fax: 01 56 61 17 03\n\n"
-"Développé par yifeng@hexysoft.com - Juin 2003\n"
-"Adapté par Daniel Huhardeaux devel@tootai.net - Mars 2010"));
+							  "\n"
+							  "8 Avenue de Choisy\n"
+							  "75013 PARIS\n"
+							  "Tél: 01 45 82 42 20\n"
+							  "Fax: 01 56 61 17 03\n\n"
+							  "Contributeurs :\n"
+							  " v0.1 : yifeng@hexysoft.com\n"
+							  " v0.2 : Daniel Huhardeaux <devel@tootai.net> - Mode Auto-Entrepreneur\n"
+							  " v0.3 : Julien Pecqueur <julien@julienpecqueur.com>"));
 }
 
 
@@ -370,7 +373,7 @@ void Form2::tCat_edit_clicked()
     Cat c;
     hCat* cat;
     
-//    if (tCat->currentSelection() == -1) return;
+    //    if (tCat->currentSelection() == -1) return;
     
     cat = Cats.at(tCat->currentRow());
     c.CatName->setText(cat->name);
@@ -378,7 +381,7 @@ void Form2::tCat_edit_clicked()
     if (c.exec() == QDialog::Accepted) {
 	cat->name = c.CatName->text();
 	cat->desc = c.CatDesc->text();
-
+	
 	tCat->setText(tCat->currentRow(), 0, c.CatName->text());
 	tCat->setText(tCat->currentRow(), 1, c.CatDesc->text());
     }
@@ -395,9 +398,9 @@ void Form2::tCat_del_clicked()
     hCat* cat = Cats.at( row );
     QString msg = QString( tr("Êtes vous certain de vouloir supprimer la catégorie \"%1\"") )
 		  .arg(cat->name);
-
+    
     switch (QMessageBox::warning(this, "", msg,
-                QMessageBox::Yes, QMessageBox::No)) {
+				 QMessageBox::Yes, QMessageBox::No)) {
     case QMessageBox::Yes:
 	tCat->removeRow( row );
 	Cats.remove( Cats.at( row ) );
@@ -433,10 +436,10 @@ void Form2::tArt_new_clicked()
     
     if (a.exec() == QDialog::Accepted) {
 	hArt *art = new hArt(a.ArtRef->text(),
-			 a.ArtDesc->text(),
-			 a.ArtPuht->text(),
-			 a.ArtStock->text(),
-			 a.ArtVendu->text());
+			     a.ArtDesc->text(),
+			     a.ArtPuht->text(),
+			     a.ArtStock->text(),
+			     a.ArtVendu->text());
 	Cats.at( a.ArtCat->currentItem() )->articles.append(art);
 	
 	displayCats();
@@ -469,7 +472,7 @@ void Form2::tArt_edit_clicked()
 {
     Art c;
     
-//    if (tCat->currentSelection() == -1 || tArt->currentSelection() == -1) return;
+    //    if (tCat->currentSelection() == -1 || tArt->currentSelection() == -1) return;
     
     hArt* a = Cats.at(tCat->currentRow())->articles.at( tArt->currentRow() );
     
@@ -512,7 +515,7 @@ void Form2::tArt_del_clicked()
 		  .arg( a->ref )
 		  .arg( a->desc );
     switch (QMessageBox::warning(this, "", msg,
-                QMessageBox::Yes, QMessageBox::No)) {
+				 QMessageBox::Yes, QMessageBox::No)) {
     case QMessageBox::Yes:
 	
 	Cats.at( cat )->articles.remove( Cats.at( cat )->articles.at( art ) );
@@ -565,7 +568,7 @@ void Form2::addCl()
 	cl->info[hClient::EMAIL] = c.email->text();
 	cl->info[hClient::SITE] = c.site->text();
 	cl->info[hClient::COMMENTAIRE] = c.commentaire->text();
-    
+	
 	int row = tClient->numRows();
 	Clients.append(cl);
 	tClient->insertRows(row);
@@ -580,14 +583,14 @@ void Form2::delCl()
     int row = tClient->currentRow();
     
     if (row < 0) return;
-
+    
     hClient* cl = Clients.at(row);
     QString msg = QString("Êtes vous certain de vouloir supprimer \"%1 - %2\"")
 		  .arg(row+1)
 		  .arg(cl->info[hClient::NOM]);
-
+    
     switch (QMessageBox::warning(this, tr("Suppression de client"), msg, 
-		QMessageBox::Yes, QMessageBox::No)) {
+				 QMessageBox::Yes, QMessageBox::No)) {
     case QMessageBox::Yes:
 	tClient->removeRow( row );
 	Clients.remove( row );
@@ -629,7 +632,7 @@ void Form2::editClient_clicked()
 	cl->info[hClient::EMAIL] = c.email->text();
 	cl->info[hClient::SITE] = c.site->text();
 	cl->info[hClient::COMMENTAIRE] = c.commentaire->text();
-    
+	
 	for (int i = 0; i < hClient::MAX_INFO; ++i)
 	    tClient->setText(row, i, cl->info[i]);
     }
@@ -822,12 +825,12 @@ void Form2::tAchat_valueChanged( int x, int y)
 	for (uint i=0; i < Cats.count(); ++i)
 	    for (uint j=0; j < Cats.at(i)->articles.count(); ++j)
 		if (Cats.at(i)->articles.at(j)->ref.upper() == tAchat->text(x,y).upper()) {
-		    tAchat->setText(x,0,Cats.at(i)->articles.at(j)->ref.upper());
-		    tAchat->setText(x,1,Cats.at(i)->articles.at(j)->desc);
-		    tAchat->setText(x,3,QString::number(Cats.at(i)->articles.at(j)->puht,'f',2));
-		    matched = 42;
-		    break;
-		}
+	    tAchat->setText(x,0,Cats.at(i)->articles.at(j)->ref.upper());
+	    tAchat->setText(x,1,Cats.at(i)->articles.at(j)->desc);
+	    tAchat->setText(x,3,QString::number(Cats.at(i)->articles.at(j)->puht,'f',2));
+	    matched = 42;
+	    break;
+	}
 	tAchat->editCell(x, (matched? 2 : 1));
 	break;
     case 2:
@@ -851,7 +854,11 @@ void Form2::facturePrint_clicked()
     hFacture* facture = getCurrentFacture();
     if (facture) {
 	QPrinter printer;
+	/* JPEC : doc name = facture type _ facture number */
+	QString name;
+	name = intitule->text() + "_" + factureRef->text();
 	printer.setColorMode( QPrinter::Color );
+	printer.setDocName ( name ); 
 	if (printer.setup(this)) {
 	    doPrint(printer, *facture);
 	}
@@ -983,7 +990,7 @@ hFacture* Form2::getCurrentFacture()
 				 tr("La liste des achats est vide !"));
 	return 0;
     }
- 
+    
     for (int i = 0; i < tAchat->numRows(); ++i) {
 	hAchat* achat = new hAchat();
 	achat->ref = tAchat->text(i,0);
@@ -1039,10 +1046,10 @@ void Form2::factureNew_clicked()
 	// suppression de la facture existante
 	for (uint i = 0; i < Factures.count(); ++i)
 	    if (Factures.at(i)->ref == factureRef->text()) {
-		Factures.remove( Factures.at(i) );
-		facturesDisplay();
-		break;
-	    }
+	    Factures.remove( Factures.at(i) );
+	    facturesDisplay();
+	    break;
+	}
 	
 	
 	// restoration
@@ -1104,7 +1111,7 @@ void Form2::tFact_doubleClicked( int x, int , int, const QPoint & )
 	
 	// basculer vers tab Facture
 	tab_6->showPage(tab_4);
-
+	
     }   
 }
 
@@ -1121,7 +1128,7 @@ void Form2::factureSave_clicked()
 		break;
 	if (i < Factures.count()) {
 	    msg = QString(tr("Voulez vous remplacer l'ancienne facture %1"))
-			  .arg(fact->ref);
+		  .arg(fact->ref);
 	    switch (QMessageBox::warning(this, tr("Facture"), msg, 
 					 QMessageBox::Yes, QMessageBox::No)) {
 	    case QMessageBox::Yes:
@@ -1139,7 +1146,7 @@ void Form2::factureSave_clicked()
 	    case QMessageBox::Yes:
 		Factures.append(fact);
 		facturesDisplay();
-	    
+		
 		msg = QString(tr("Voulez vous comptabliser les articles vendus ?"));
 		if (QMessageBox::warning(this, tr("Facture"), msg, 
 					 QMessageBox::Yes, QMessageBox::No) ==
@@ -1162,8 +1169,8 @@ void Form2::facturesDisplay()
 	tFact->setText(i, 1, Factures.at(i)->date.toString(Qt::LocalDate));
 	tFact->setText(i, 2, Factures.at(i)->client.section('\n', 0, 0));
 	tFact->setText(i, 3, QString::number(Factures.at(i)->sumTTC, 'f', 2));
-	QString paiementStr[] = { tr("Espèce"), tr("Chèque"),
-					tr("Carte Bleu"), tr("Autre") };
+	QString paiementStr[] = { tr("Espèces"), tr("Chèque"),
+				  tr("Carte Bleu"), tr("Autre") };
 	tFact->setText(i, 4, paiementStr[Factures.at(i)->paiement]);
     }
 }
@@ -1190,7 +1197,15 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	QPixmap* pix = userLogo->pixmap();
 	p.drawPixmap(0, 0, *pix, 0, 0, 300, 300);
 	
-	// zone N° de la facture
+	// zone utilisateur
+	p.setFont( QFont( "", 7, QFont::Normal) );
+	rect = QRect(20, 230, 300, 15);
+	p.drawText(rect, Qt::AlignLeft|Qt::AlignTop, QString( tr("Dispensé d'immatriculation au registre du commerce") ));
+	rect = QRect(20, 245, 300, 15);
+	p.drawText(rect, Qt::AlignLeft|Qt::AlignTop, QString( tr("et des sociétés (RCS) et au répertoire des métiers (RM)") ));
+	p.setFont( QFont( "", 10) );
+	
+	// zone Num de la facture
 	p.setBrush( QColor(210, 210, 210) );
 	p.setPen( QColor(210, 210, 210) );
 	rect = QRect(390, 10, 270, 30);
@@ -1208,7 +1223,7 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	p.drawText(rect, Qt::AlignCenter, facture.date.toString(Qt::LocalDate));
 	p.drawRoundRect(rect, 7, 7);
 	
-	// zone N° de page
+	// zone Num de page
 	rect = QRect(525, 60, 135, 20);
 	p.drawText(rect, Qt::AlignCenter, QString( tr("PAGE") ));
 	p.drawRoundRect(rect, 7, 7);
@@ -1230,7 +1245,7 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	p.drawText(rect, Qt::AlignCenter, QString( tr("MODE DE REGLEMENT") ));
 	p.drawRoundRect(rect, 7, 7);
 	rect = QRect(20, 290, 270, 30);
-	QString paiementType[] = { tr("Espèce"), tr("Chèque"), tr("Carte Bleu"), tr("Autre") };
+	QString paiementType[] = { tr("Espéces"), tr("Chéque"), tr("Carte Bleu"), tr("Autre") };
 	QString paiement = paiementType[facture.paiement];
 	if (! facture.comment.isEmpty())
 	    paiement += " ("+facture.comment+") ";
@@ -1284,68 +1299,58 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	p.setFont( QFont( "", 9) );
 	p.drawText(rect, Qt::AlignLeft, refs);
 	p.setFont( QFont( "", 10) );
-
+	
 	rect = QRect(130, 380, 260, 400);
 	p.drawRect(rect);
 	rect = QRect(135, 380, 255, 400);
 	p.setFont( QFont( "", 9) );
 	p.drawText(rect, Qt::AlignLeft, descs);
 	p.setFont( QFont( "", 10) );
-
+	
 	rect = QRect(390, 380, 70, 400);
 	p.drawRect(rect);
 	rect = QRect(400, 380, 60, 400);
 	p.drawText(rect, Qt::AlignRight, quantites);
-
+	
 	rect = QRect(460, 380, 90, 400);
 	p.drawRect(rect);
 	rect = QRect(470, 380, 80, 400);
 	p.drawText(rect, Qt::AlignRight, puhts);
-
+	
 	rect = QRect(550, 380, 60, 400);
 	p.drawRect(rect);
 	rect = QRect(560, 380, 50, 400);
 	p.drawText(rect, Qt::AlignRight, remises);
-
+	
 	rect = QRect(610, 380, 90, 400);
 	p.drawRect(rect);
 	rect = QRect(620, 380, 80, 400);
 	p.drawText(rect, Qt::AlignRight, phts);
-
-
+	
+	
 	// zone des totaux
 	if (page == totalPage) {
 	    
 	    p.setPen(QPen(black, 1));
 	    
-//DH 03/2010
-//rect = QRect(x,y,l,h)
-	    rect = QRect(475, 800, 225, 80);
+	    //DH 03/2010
+	    //rect = QRect(x,y,l,h)
+	    rect = QRect(475, 800, 225, 25);
 	    p.drawRoundRect(rect, 7, 7);
 	    rect = QRect(480, 800, 105, 25);
 	    p.drawText(rect, Qt::AlignLeft|Qt::AlignVCenter, QString( tr("TOTAL HT") ));
-	    rect = QRect(480, 825, 105, 25);
-	    p.drawText(rect, Qt::AlignLeft|Qt::AlignVCenter, ( tr("TVA (%1%)") )
-		       .arg(facture.tva, 0, 'f', 2));
-	    rect = QRect(480, 850, 105, 30);
-	    p.drawText(rect, Qt::AlignLeft|Qt::AlignVCenter, QString( tr("TOTAL TTC") ));
-	    
 	    rect = QRect(585, 800, 80, 25);
 	    p.drawText(rect, Qt::AlignRight|Qt::AlignVCenter, 
 		       QString::number(facture.sumHT, 'f', 2) );
-	    rect = QRect(585, 825, 80, 25);
-	    p.drawText(rect, Qt::AlignRight|Qt::AlignVCenter, 
-		       QString::number(facture.sumTVA, 'f', 2));
-	    rect = QRect(585, 850, 80, 25);
-	    p.drawText(rect, Qt::AlignRight|Qt::AlignVCenter, 
-		       QString::number(facture.sumTTC, 'f', 2));
-	    rect = QRect(590, 850, 110, 25);
+	    rect = QRect(590, 800, 110, 25);
 	    p.drawText(rect, Qt::AlignRight|Qt::AlignVCenter, QString( tr("EUR ") ));
-
+	    rect = QRect(465, 830, 300, 160);
+	    p.drawText(rect, Qt::AlignLeft|Qt::AlignTop, QString( tr("TVA non applicable, art. 293 B du CGI") ));
+	    
 	    rect = QRect(0, 990, 700, 15);
+	    //p.drawRoundRect(rect, 10, 10);
 	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, QString( tr("Les produits demeurent la propriété du vendeur jusqu'au paiement intégral de leur valeur") ));
-
-	    // zone utilisateur
+	    
 	    p.setFont( QFont( "Times", 8) );
 	    rect = QRect(0, 1005, 700, 15);
 	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(0)+QString( tr("  "))+userNom->text(1)+QString( tr("  "))+userNom->text(2));
@@ -1355,7 +1360,7 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(6)+QString( tr("  "))+userNom->text(7)+QString( tr("  "))+userNom->text(8));
 	    rect = QRect(0, 1050, 700, 15);
 	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(9)+QString( tr("  "))+userNom->text(10)+QString( tr("  "))+userNom->text(11));
-
+	    
 	    p.setPen(penOrigin);
 	} else {
 	    printer.newPage();
@@ -1384,13 +1389,13 @@ void Form2::countVendu( hFacture & fact )
 	
 	for (uint j=0; j < Cats.count(); ++j)
 	    for (uint k=0; k < Cats.at(j)->articles.count(); ++k) {
-		hArt* art = Cats.at(j)->articles.at(k);
-		if (a->ref == art->ref) {
-		    if (art->stock < a->quantite)
-			art->stock=0;
-		    art->vendu += a->quantite;
-		}
+	    hArt* art = Cats.at(j)->articles.at(k);
+	    if (a->ref == art->ref) {
+		if (art->stock < a->quantite)
+		    art->stock=0;
+		art->vendu += a->quantite;
 	    }
+	}
     }
 }
 

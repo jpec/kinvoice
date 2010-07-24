@@ -1,17 +1,20 @@
+TEMPLATE	= app
+LANGUAGE	= C++
+
+CONFIG	+= qt warn_on release
+
+HEADERS	+= data.h \
+	tableintitem.h
+
 SOURCES	+= main.cpp \
 	data.cpp \
 	tableintitem.cpp
-HEADERS	+= data.h \
-	tableintitem.h
-unix {
-  UI_DIR = .ui
-  MOC_DIR = .moc
-  OBJECTS_DIR = .obj
-}
+
 FORMS	= form2.ui \
 	cat.ui \
 	art.ui \
 	client.ui
+
 IMAGES	= images/logo.png \
 	images/button_cancel.png \
 	images/button_ok.png \
@@ -40,6 +43,9 @@ IMAGES	= images/logo.png \
 	images/korganizer.png \
 	images/edit.png \
 	images/editclear.png
-TEMPLATE	=app
-CONFIG	+= qt warn_on release
-LANGUAGE	= C++
+
+unix {
+  UI_DIR = .ui
+  MOC_DIR = .moc
+  OBJECTS_DIR = .obj
+}

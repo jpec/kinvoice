@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>Form2</class>
 <author>Yifeng HE</author>
 <widget class="QMainWindow">
@@ -9,14 +9,14 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>608</width>
-            <height>612</height>
+            <width>1272</width>
+            <height>819</height>
         </rect>
     </property>
     <property name="minimumSize">
         <size>
-            <width>232</width>
-            <height>343</height>
+            <width>282</width>
+            <height>335</height>
         </size>
     </property>
     <property name="caption">
@@ -221,9 +221,6 @@
                                         <property name="text">
                                             <string>Nouveau</string>
                                         </property>
-                                        <property name="pixmap">
-                                            <pixmap></pixmap>
-                                        </property>
                                     </widget>
                                     <widget class="QToolButton">
                                         <property name="name">
@@ -232,9 +229,6 @@
                                         <property name="text">
                                             <string>Editer</string>
                                         </property>
-                                        <property name="pixmap">
-                                            <pixmap></pixmap>
-                                        </property>
                                     </widget>
                                     <widget class="QToolButton">
                                         <property name="name">
@@ -242,9 +236,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Supprimer</string>
-                                        </property>
-                                        <property name="pixmap">
-                                            <pixmap></pixmap>
                                         </property>
                                     </widget>
                                     <spacer>
@@ -367,9 +358,6 @@
                                         <property name="text">
                                             <string>Nouveau</string>
                                         </property>
-                                        <property name="pixmap">
-                                            <pixmap></pixmap>
-                                        </property>
                                     </widget>
                                     <widget class="QToolButton">
                                         <property name="name">
@@ -381,9 +369,6 @@
                                         <property name="text">
                                             <string>Editer</string>
                                         </property>
-                                        <property name="pixmap">
-                                            <pixmap></pixmap>
-                                        </property>
                                     </widget>
                                     <widget class="QToolButton">
                                         <property name="name">
@@ -394,9 +379,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Supprimer</string>
-                                        </property>
-                                        <property name="pixmap">
-                                            <pixmap></pixmap>
                                         </property>
                                     </widget>
                                     <spacer>
@@ -526,8 +508,8 @@
                                 <property name="text">
                                     <string></string>
                                 </property>
-                                <property name="pixmap">
-                                    <pixmap>reload_page.png</pixmap>
+                                <property name="iconSet">
+                                    <iconset>reload_page.png</iconset>
                                 </property>
                             </widget>
                             <widget class="QToolButton">
@@ -540,8 +522,8 @@
                                 <property name="text">
                                     <string></string>
                                 </property>
-                                <property name="pixmap">
-                                    <pixmap>filenew_1.png</pixmap>
+                                <property name="iconSet">
+                                    <iconset>filenew_1.png</iconset>
                                 </property>
                             </widget>
                             <widget class="QToolButton">
@@ -551,8 +533,8 @@
                                 <property name="text">
                                     <string></string>
                                 </property>
-                                <property name="pixmap">
-                                    <pixmap>edit.png</pixmap>
+                                <property name="iconSet">
+                                    <iconset>edit.png</iconset>
                                 </property>
                             </widget>
                             <widget class="QToolButton">
@@ -562,8 +544,8 @@
                                 <property name="text">
                                     <string></string>
                                 </property>
-                                <property name="pixmap">
-                                    <pixmap>button_cancel.png</pixmap>
+                                <property name="iconSet">
+                                    <iconset>button_cancel.png</iconset>
                                 </property>
                             </widget>
                             <spacer>
@@ -622,8 +604,8 @@
                                         <property name="text">
                                             <string></string>
                                         </property>
-                                        <property name="pixmap">
-                                            <pixmap>viewmag.png</pixmap>
+                                        <property name="iconSet">
+                                            <iconset>viewmag.png</iconset>
                                         </property>
                                     </widget>
                                 </hbox>
@@ -852,19 +834,6 @@
                     <property name="title">
                         <string>Référence de la Facture</string>
                     </property>
-                    <widget class="QLineEdit">
-                        <property name="name">
-                            <cstring>factureRef</cstring>
-                        </property>
-                        <property name="geometry">
-                            <rect>
-                                <x>60</x>
-                                <y>40</y>
-                                <width>110</width>
-                                <height>18</height>
-                            </rect>
-                        </property>
-                    </widget>
                     <widget class="QLabel">
                         <property name="name">
                             <cstring>pixmapLabel1_2_2</cstring>
@@ -901,6 +870,19 @@
                         </property>
                         <property name="pixmap">
                             <pixmap>run.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>factureRef</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>60</x>
+                                <y>40</y>
+                                <width>110</width>
+                                <height>18</height>
+                            </rect>
                         </property>
                     </widget>
                 </widget>
@@ -971,19 +953,6 @@
                         </property>
                         <property name="text">
                             <string>%</string>
-                        </property>
-                    </widget>
-                    <widget class="QLineEdit">
-                        <property name="name">
-                            <cstring>tvaRate</cstring>
-                        </property>
-                        <property name="geometry">
-                            <rect>
-                                <x>40</x>
-                                <y>50</y>
-                                <width>50</width>
-                                <height>21</height>
-                            </rect>
                         </property>
                     </widget>
                     <widget class="QLabel">
@@ -1075,6 +1044,19 @@
                             <bool>true</bool>
                         </property>
                     </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>tvaRate</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>40</x>
+                                <y>50</y>
+                                <width>50</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                    </widget>
                 </widget>
                 <widget class="QButtonGroup">
                     <property name="name">
@@ -1091,22 +1073,6 @@
                     <property name="title">
                         <string>Paiement</string>
                     </property>
-                    <widget class="QRadioButton">
-                        <property name="name">
-                            <cstring>paiement_1</cstring>
-                        </property>
-                        <property name="geometry">
-                            <rect>
-                                <x>10</x>
-                                <y>20</y>
-                                <width>90</width>
-                                <height>20</height>
-                            </rect>
-                        </property>
-                        <property name="text">
-                            <string>Espèce</string>
-                        </property>
-                    </widget>
                     <widget class="QRadioButton">
                         <property name="name">
                             <cstring>paiement_3</cstring>
@@ -1184,6 +1150,22 @@
                             <string>Chèque</string>
                         </property>
                     </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>paiement_1</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>90</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Espèces</string>
+                        </property>
+                    </widget>
                 </widget>
                 <widget class="QGroupBox">
                     <property name="name">
@@ -1234,19 +1216,6 @@
                         </property>
                         <property name="readOnly">
                             <bool>true</bool>
-                        </property>
-                    </widget>
-                    <widget class="QLineEdit">
-                        <property name="name">
-                            <cstring>quantite</cstring>
-                        </property>
-                        <property name="geometry">
-                            <rect>
-                                <x>140</x>
-                                <y>190</y>
-                                <width>90</width>
-                                <height>18</height>
-                            </rect>
                         </property>
                     </widget>
                     <widget class="QLabel">
@@ -1360,6 +1329,22 @@
                             <pixmap>button_ok.png</pixmap>
                         </property>
                     </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>quantite</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>140</x>
+                                <y>190</y>
+                                <width>90</width>
+                                <height>18</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>1</string>
+                        </property>
+                    </widget>
                 </widget>
                 <widget class="QGroupBox">
                     <property name="name">
@@ -1394,22 +1379,6 @@
                         </property>
                         <property name="text">
                             <string>Intitulé (FACTURE, AVOIR...)</string>
-                        </property>
-                    </widget>
-                    <widget class="QLineEdit">
-                        <property name="name">
-                            <cstring>intitule</cstring>
-                        </property>
-                        <property name="geometry">
-                            <rect>
-                                <x>10</x>
-                                <y>350</y>
-                                <width>150</width>
-                                <height>20</height>
-                            </rect>
-                        </property>
-                        <property name="text">
-                            <string>FACTURE</string>
                         </property>
                     </widget>
                     <widget class="QPushButton">
@@ -1520,8 +1489,8 @@
                         <property name="text">
                             <string></string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap>filenew_1.png</pixmap>
+                        <property name="iconSet">
+                            <iconset>filenew_1.png</iconset>
                         </property>
                     </widget>
                     <widget class="QPushButton">
@@ -1558,8 +1527,8 @@
                         <property name="text">
                             <string></string>
                         </property>
-                        <property name="pixmap">
-                            <pixmap>button_cancel.png</pixmap>
+                        <property name="iconSet">
+                            <iconset>button_cancel.png</iconset>
                         </property>
                     </widget>
                     <widget class="QPushButton">
@@ -1598,6 +1567,22 @@
                         </property>
                         <property name="pixmap">
                             <pixmap>filenew_1.png</pixmap>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit">
+                        <property name="name">
+                            <cstring>intitule</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>350</y>
+                                <width>150</width>
+                                <height>20</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>FACTURE</string>
                         </property>
                     </widget>
                 </widget>
@@ -1700,7 +1685,7 @@
             <iconset></iconset>
         </property>
         <property name="text">
-            <string>Nouveau</string>
+            <string>&amp;Nouveau</string>
         </property>
         <property name="menuText">
             <string>&amp;Nouveau</string>
