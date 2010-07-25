@@ -47,6 +47,9 @@ void Form2::init()
     
     // tab Archives
     facturesDisplay();
+    
+    // tab Reporting
+    getReporting();
 }
 
 
@@ -1420,3 +1423,39 @@ void Form2::factureNew_2_clicked()
 	factureTTC->setText("");
     }
 }
+
+/*
+ * Tab Reporting
+ */
+ 
+void Form2::getReporting ()
+{
+	/* Déclarations */
+	int Month, Year;
+	double Ht, Ttc;
+	QDate today = QDate::currentDate();
+	Month = today.month();
+	Year = today.year();
+	
+	/* Alimentation widgets */
+	bDate->setText(QString::number(Year));
+	while (tCumul->numRows() > 0) tCumul->removeRow(0);
+    tCumul->insertRows(0, 12);
+ 
+	/* Calcul des cumuls */
+    for (int i = 0; i < 12; ++i) {
+		tCumul->setText(i, 0, QDate::longMonthName(i+1));
+		Ht = 0;
+		Ttc = 0;
+		for (int j = 0; j < Factures.count(); j++) {
+			if (Factures.at(j)->date.year() == Year && Factures.at(j)->date.month() == i+1) {
+				Ttc = Ttc + Factures.at(j)->sumTTC;
+				Ht = Ht + Factures.at(j)->sumHT;
+			}
+		}
+		tCumul->setText(i, 1, QString::number(Ht, 'f', 2));
+		tCumul->setText(i, 2, QString::number(Ttc, 'f', 2));
+    }
+    
+}
+
