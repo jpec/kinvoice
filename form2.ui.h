@@ -1218,39 +1218,39 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	// zone date
 	rect = QRect(390, 60, 135, 20);
 	p.drawText(rect, Qt::AlignCenter, QString( tr("DATE") ));
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	rect = QRect(390, 80,  135, 30);
 	p.drawText(rect, Qt::AlignCenter, facture.date.toString(Qt::LocalDate));
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	
 	// zone Num de page
 	rect = QRect(525, 60, 135, 20);
 	p.drawText(rect, Qt::AlignCenter, QString( tr("PAGE") ));
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	rect = QRect(525, 80, 135, 30);
 	p.drawText(rect, Qt::AlignCenter, QString("%1 / %1")
 		   .arg(page)
 		   .arg(totalPage));
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	
 	
 	// zone client
 	rect = QRect(390, 140, 270, 120);
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	rect = QRect(400, 145, 265, 115);
 	p.drawText(rect, Qt::AlignLeft|Qt::AlignTop, facture.client);
 	
 	// zone mode de paiement
 	rect = QRect(20, 270, 270, 20);
 	p.drawText(rect, Qt::AlignCenter, QString( tr("MODE DE REGLEMENT") ));
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	rect = QRect(20, 290, 270, 30);
-	QString paiementType[] = { tr("Espéces"), tr("Chéque"), tr("Carte Bleu"), tr("Autre") };
+	QString paiementType[] = { tr("Espèces"), tr("Chèque"), tr("Carte Bleu"), tr("Autre") };
 	QString paiement = paiementType[facture.paiement];
 	if (! facture.comment.isEmpty())
 	    paiement += " ("+facture.comment+") ";
 	p.drawText(rect, Qt::AlignCenter, paiement);
-	p.drawRoundRect(rect, 7, 7);
+	p.drawRect(rect);
 	
 	// zone de référence
 	rect = QRect(20, 350, 110, 30);
@@ -1336,7 +1336,7 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 	    //DH 03/2010
 	    //rect = QRect(x,y,l,h)
 	    rect = QRect(475, 800, 225, 25);
-	    p.drawRoundRect(rect, 7, 7);
+	    p.drawRect(rect);
 	    rect = QRect(480, 800, 105, 25);
 	    p.drawText(rect, Qt::AlignLeft|Qt::AlignVCenter, QString( tr("TOTAL HT") ));
 	    rect = QRect(585, 800, 80, 25);
@@ -1344,22 +1344,25 @@ void Form2::doPrint(QPrinter& printer, hFacture& facture)
 		       QString::number(facture.sumHT, 'f', 2) );
 	    rect = QRect(590, 800, 110, 25);
 	    p.drawText(rect, Qt::AlignRight|Qt::AlignVCenter, QString( tr("EUR ") ));
-	    rect = QRect(465, 830, 300, 160);
+	    rect = QRect(480, 830, 300, 160);
+	    p.setFont( QFont( "", 7, QFont::Normal) );
 	    p.drawText(rect, Qt::AlignLeft|Qt::AlignTop, QString( tr("TVA non applicable, art. 293 B du CGI") ));
+	    p.setFont( QFont( "", 10) );
 	    
 	    rect = QRect(0, 990, 700, 15);
 	    //p.drawRoundRect(rect, 10, 10);
+	    p.setFont( QFont( "", 7, QFont::Normal) );
 	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, QString( tr("Les produits demeurent la propriété du vendeur jusqu'au paiement intégral de leur valeur") ));
 	    
-	    p.setFont( QFont( "Times", 8) );
 	    rect = QRect(0, 1005, 700, 15);
-	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(0)+QString( tr("  "))+userNom->text(1)+QString( tr("  "))+userNom->text(2));
+	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(0)+QString( tr(" "))+userNom->text(1)+QString( tr(" "))+userNom->text(2));
 	    rect = QRect(0, 1020, 700, 15);
-	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(3)+QString( tr("  "))+userNom->text(4)+QString( tr("  "))+userNom->text(5));
+	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(3)+QString( tr(" "))+userNom->text(4)+QString( tr(" "))+userNom->text(5));
 	    rect = QRect(0, 1035, 700, 15);
-	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(6)+QString( tr("  "))+userNom->text(7)+QString( tr("  "))+userNom->text(8));
+	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(6)+QString( tr(" "))+userNom->text(7)+QString( tr(" "))+userNom->text(8));
 	    rect = QRect(0, 1050, 700, 15);
-	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(9)+QString( tr("  "))+userNom->text(10)+QString( tr("  "))+userNom->text(11));
+	    p.drawText(rect, Qt::AlignHCenter|Qt::AlignVCenter, userNom->text(9)+QString( tr(" "))+userNom->text(10)+QString( tr(" "))+userNom->text(11));
+	    p.setFont( QFont( "", 10) );
 	    
 	    p.setPen(penOrigin);
 	} else {
