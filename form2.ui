@@ -1668,10 +1668,10 @@
                     </property>
                     <property name="geometry">
                         <rect>
-                            <x>0</x>
-                            <y>0</y>
-                            <width>440</width>
-                            <height>401</height>
+                            <x>10</x>
+                            <y>10</y>
+                            <width>360</width>
+                            <height>340</height>
                         </rect>
                     </property>
                     <property name="title">
@@ -1700,8 +1700,8 @@
                             <rect>
                                 <x>10</x>
                                 <y>50</y>
-                                <width>420</width>
-                                <height>340</height>
+                                <width>340</width>
+                                <height>280</height>
                             </rect>
                         </property>
                         <property name="numRows">
@@ -1716,11 +1716,11 @@
                             <cstring>bDate</cstring>
                         </property>
                         <property name="enabled">
-                            <bool>false</bool>
+                            <bool>true</bool>
                         </property>
                         <property name="geometry">
                             <rect>
-                                <x>360</x>
+                                <x>280</x>
                                 <y>20</y>
                                 <width>70</width>
                                 <height>21</height>
@@ -2085,6 +2085,12 @@
         <signal>clicked()</signal>
         <receiver>MainForm</receiver>
         <slot>factureNew_2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bDate</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>MainForm</receiver>
+        <slot>getReporting()</slot>
     </connection>
 </connections>
 <includes>
