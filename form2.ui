@@ -1727,6 +1727,22 @@
                             </rect>
                         </property>
                     </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>226</x>
+                                <y>16</y>
+                                <width>50</width>
+                                <height>30</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Année :</string>
+                        </property>
+                    </widget>
                 </widget>
             </widget>
         </widget>

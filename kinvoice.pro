@@ -44,6 +44,14 @@ IMAGES	= images/logo.png \
 	images/edit.png \
 	images/editclear.png
 
+CODECFORTR      = UTF-8
+CODECFORSRC     = UTF-8
+
+
+
+
+
+
 unix {
   UI_DIR = .ui
   MOC_DIR = .moc
