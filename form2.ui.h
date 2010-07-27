@@ -320,9 +320,12 @@ void Form2::helpAbout() {
 			"Tél: 01 45 82 42 20\n"
 			"Fax: 01 56 61 17 03\n\n"
 			"Contributeurs :\n"
-			" v0.1 : yifeng@hexysoft.com\n"
+			" v0.1 : Hexysoft <yifeng@hexysoft.com> - Version de base\n"
 			" v0.2 : Daniel Huhardeaux <devel@tootai.net> - Mode Auto-Entrepreneur\n"
-			" v0.3 : Julien Pecqueur <julien@julienpecqueur.com>"
+			" v0.3 : Julien Pecqueur <julien@julienpecqueur.com> - Module Reporting pour AE\n"
+			"                                                      Nettoyage code + UTF-8\n"
+			" "
+			"   *** Depuis la version 0.2, Kinvoice n'est plus supporté par Hexysoft ***"
 			)
 		     );
 }
@@ -768,7 +771,7 @@ void Form2::bAjouter_clicked() {
   tAchat->clearSelection(TRUE);
   tAchat->editCell(row, 3);
   tAchat->selectRow(row);
-  quantite->setText("");
+  quantite->setText("0");
   doSum();
 }
 
@@ -1258,3 +1261,9 @@ void Form2::getReporting () {
   }
 }
 
+
+
+void Form2::tab_6_currentChanged( QWidget * )
+{
+
+}

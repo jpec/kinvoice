@@ -9,14 +9,14 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>1272</width>
-            <height>819</height>
+            <width>1276</width>
+            <height>869</height>
         </rect>
     </property>
     <property name="minimumSize">
         <size>
-            <width>282</width>
-            <height>335</height>
+            <width>1276</width>
+            <height>869</height>
         </size>
     </property>
     <property name="caption">
@@ -29,6 +29,12 @@
         <widget class="QTabWidget">
             <property name="name">
                 <cstring>tab_6</cstring>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>1272</width>
+                    <height>819</height>
+                </size>
             </property>
             <widget class="QWidget">
                 <property name="name">
@@ -1493,25 +1499,6 @@
                             <iconset>filenew_1.png</iconset>
                         </property>
                     </widget>
-                    <widget class="QPushButton">
-                        <property name="name">
-                            <cstring>factureSave</cstring>
-                        </property>
-                        <property name="geometry">
-                            <rect>
-                                <x>500</x>
-                                <y>330</y>
-                                <width>50</width>
-                                <height>50</height>
-                            </rect>
-                        </property>
-                        <property name="text">
-                            <string></string>
-                        </property>
-                        <property name="pixmap">
-                            <pixmap>filesave_1.png</pixmap>
-                        </property>
-                    </widget>
                     <widget class="QToolButton">
                         <property name="name">
                             <cstring>bDelAchat</cstring>
@@ -1583,6 +1570,25 @@
                         </property>
                         <property name="text">
                             <string>FACTURE</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>factureSave</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>500</x>
+                                <y>330</y>
+                                <width>50</width>
+                                <height>50</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>filesave_1.png</pixmap>
                         </property>
                     </widget>
                 </widget>
@@ -1675,7 +1681,7 @@
                         </rect>
                     </property>
                     <property name="title">
-                        <string>Cumul CA par mois</string>
+                        <string>Chiffre d'affaires mensuel</string>
                     </property>
                     <widget class="QTable">
                         <column>
@@ -2108,6 +2114,12 @@
         <receiver>MainForm</receiver>
         <slot>getReporting()</slot>
     </connection>
+    <connection>
+        <sender>tab_6</sender>
+        <signal>currentChanged(QWidget*)</signal>
+        <receiver>MainForm</receiver>
+        <slot>getReporting()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="global" impldecl="in declaration">qmessagebox.h</include>
@@ -2173,6 +2185,7 @@
     <slot>doPrint( QPrinter &amp; printer, hFacture &amp; facture )</slot>
     <slot>factureNew_2_clicked()</slot>
     <slot>getReporting()</slot>
+    <slot>tab_6_currentChanged( QWidget * )</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
