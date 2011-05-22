@@ -1,0 +1,13 @@
+Kinvoice a été développé par http://hexysoft.fr.
+
+Les contributions externes :
+- Daniel (http://tootai.net) a sorti une version pour Auto-Entrepreneur (V0.2).
+- J'ai repris cette version pour l'améliorer (V0.3).
+
+Mes modifications :
+- Ajout d’un onglet Reporting qui permet de calculer le chiffre d’affaires mensuel (pratique pour faire sa déclaration),
+- Le code est passé en UTF-8 (possibilité de faire traduire l’application dans d’autres langues),
+- Petites modifications visant à améliorer l’ergonomie (alimentation des champs Quantité à 1 par défaut, nom de la facture imprimée alimenté, etc.),
+- Mise à jour du template de la facture/devis (alignement, polices uniformisées, suppression des arrondis sur les cadres).
+
+Finalement j'ai abandonné Kinvoice pour lancer Qfacture.
